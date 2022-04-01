@@ -1,5 +1,5 @@
 # Angular-Pokedex
 
-Antoine Grimbert
-LA2
+Antoine Grimbert<br>
+LA2<br>
 antoine.grimbert@ig2i.centralelille.fr
