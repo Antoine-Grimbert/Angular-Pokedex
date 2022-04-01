@@ -1,0 +1,14 @@
+.auth-card {
+  max-width: 200px;
+  margin: auto;
+  //Centrer verticalement
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.auth-field {
+  //margin-right: auto;
+  //margin-left: auto;
+  width: 100%;
+}

@@ -1,0 +1,42 @@
+<ng-container *ngIf="pokemon">
+
+  <mat-card class="poke-card">
+
+    <mat-card-title-group>
+
+      <figure>
+        <img mat-card-lg-image src="assets/img/official-artwork/{{pokemon.id}}.png" class="poke-picture">
+        <figcaption style="text-align: center">No. {{pokemon.id  | number:'3.0-0'}}</figcaption>
+      </figure>
+
+      <div>
+
+        <mat-card-title>
+          {{pokemon.name}}
+          <audio autoplay #audioElement src="assets/audio/{{pokemon.id}}.mp3"></audio>
+          <button class="play-button" mat-icon-button (click)="audioElement.play()"><mat-icon>play_circle_outline</mat-icon></button>
+        </mat-card-title>
+
+        <mat-card-subtitle>
+          <mat-chip-list>
+              <mat-chip *ngFor="let type of pokemon.types">{{type}}</mat-chip>
+          </mat-chip-list><br>
+          Taille : {{pokemon.height | number:'1.1-1'}} m<br><br>
+          Poids : {{pokemon.weight | number:'1.1-1'}} kg<br>
+        </mat-card-subtitle>
+
+      </div>
+
+    </mat-card-title-group>
+
+    <mat-card-content>
+      {{pokemon.description}}
+    </mat-card-content>
+
+<!--    <button mat-mini-fab color="primary" aria-label="Ajouter ce Pokémon" style="float: right;">-->
+<!--      <mat-icon>add</mat-icon>-->
+<!--    </button>-->
+
+  </mat-card>
+
+</ng-container>

@@ -1,0 +1,14 @@
+<!-- Creates a layout with a left-positioned sidenav and explicit content. -->
+<mat-drawer-container class="poke-container">
+  <mat-drawer mode="side" opened class="poke-drawer">
+    <app-pokemon-list (pokemonSelected)="pokemonSelection($event)"></app-pokemon-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="top-frame">
+      <app-pokemon-detail *ngIf="pokemonId" [passedValue]=pokemonId></app-pokemon-detail> <!---->
+    </div>
+    <div class="bottom-frame">
+      <app-team></app-team>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

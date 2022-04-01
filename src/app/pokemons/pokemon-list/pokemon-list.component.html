@@ -1,0 +1,16 @@
+<img src="assets/img/titlePokemon.png" alt="GottaCatchThemAll!" style="width: 100%;">
+
+<mat-form-field appearance="fill" style="height: 10%; width: 100%">
+  <mat-label>Recherche...</mat-label>
+  <input matInput type="text" (input)="searchThis()" [(ngModel)]="toSearch" class="search-bar" placeholder="Ex: Pikachu, 25..." value="">
+  <button mat-button matPrefix mat-icon-button>
+    <mat-icon>search</mat-icon>
+  </button>
+</mat-form-field>
+
+<mat-list infiniteScroll [scrollWindow]="false" (scrolled)="onScroll()" style="overflow: auto; height: 69.9%"> <!-- height: calc(100vh - 70px -->
+  <mat-list-item *ngFor="let pokemon of pokemons" (click)="pokemonSelection(pokemon.id)" routerLink="/pokedex/{{pokemon.id}}" [routerLinkActive]="['is-active']">
+    <img matListAvatar src="assets/img/sprites/{{pokemon.id}}.png">
+    <span>{{pokemon.id}}</span>. {{pokemon.name}}
+  </mat-list-item>
+</mat-list>

@@ -1,0 +1,22 @@
+<mat-card class="auth-card">
+
+  <mat-card-title style="margin-bottom: 20px;">Authentification</mat-card-title>
+
+  <mat-card-content>
+    <mat-form-field appearance="fill" class="auth-field">
+      <mat-label>Login</mat-label>
+      <input #loginField matInput type="text" value="">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="auth-field">
+      <mat-label>Mot de passe</mat-label>
+      <input #passwordField matInput [type]="hide ? 'password' : 'text'" value="">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <div *ngIf="badCredentials" style="color:red; font-size: 12px;">Identifiants incorrects</div>
+
+    <button mat-raised-button style="margin-left: 50%;" (click)="login(loginField.value, passwordField.value)">Connexion</button>
+  </mat-card-content>
+
+</mat-card>
